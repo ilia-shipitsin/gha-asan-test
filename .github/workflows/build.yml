@@ -16,6 +16,8 @@ jobs:
 
     - name: Setup MSVC dev command prompt
       uses: TheMrMilchmann/setup-msvc-dev@v3
+      with:
+        arch: x64
 
     - name: Build
       run: msbuild /m /v:m /p:Configuration=Debug /p:Platform=x64 ConsoleApplication1.sln
