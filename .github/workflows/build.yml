@@ -22,6 +22,11 @@ jobs:
     - name: Build
       run: msbuild /m /v:m /p:Configuration=Debug /p:Platform=x64 ConsoleApplication1.sln
 
+    - name: check PATH
+      run: |
+        ${env:PATH}.Split(';')
+      shell: pwsh
+
     - name: Run
       run: |
         x64\Debug\ConsoleApplication1.exe
