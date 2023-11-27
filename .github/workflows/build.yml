@@ -24,7 +24,7 @@ jobs:
 
     - name: check PATH
       run: |
-        ${env:PATH}.Split(';')
+        ${env:PATH}.Split(';').Where({ $_ -like '*Hostx64*' }) | gci -filter '*asan*'
       shell: pwsh
 
     - name: Run
