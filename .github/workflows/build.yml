@@ -31,3 +31,9 @@ jobs:
       run: |
         x64\Debug\ConsoleApplication1.exe
         echo $LastExitCode
+
+    - name: Log
+      run: |
+      if: always()
+        Get-WinEvent Application | Format-List
+      shell: pwsh
