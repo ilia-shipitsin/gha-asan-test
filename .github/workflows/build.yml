@@ -33,7 +33,7 @@ jobs:
         echo $LastExitCode
 
     - name: Log
-      run: |
       if: always()
+      run: |
         Get-WinEvent Application | Format-List
       shell: pwsh
